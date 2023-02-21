@@ -25,7 +25,31 @@
   <!-- <xacro:default_beacon namespace="${namespace}" parent_link="${namespace}/base_link">
     <origin xyz="0 0 0" rpy="0 0 0"/>
   </xacro:default_beacon> -->
- 
+  
+    <!-- Mount a GPS. -->
+  <xacro:default_gps namespace="${namespace}" parent_link="${namespace}/base_link" />
+
+  <!-- Mount a Pose 3D sensor. -->
+  <xacro:default_pose_3d_macro
+    namespace="${namespace}"
+    parent_link="${namespace}/base_link">
+    <!--   inertial_reference_frame="${inertial_reference_frame}"> -->
+   <origin xyz="0 0 0" rpy="0 0 0"/>
+    </xacro:default_pose_3d_macro>
+
+  <!-- Forward-looking sonar sensor -->
+  <xacro:forward_multibeam_p900 namespace="${namespace}" parent_link="${namespace}/base_link">
+    <origin xyz="0.0 0 -0.1" rpy="0 0 0"/>
+  </xacro:forward_multibeam_p900>
+  
+  
+  <!-- DVL  -->
+<xacro:default_dvl_macro
+  namespace="${namespace}"
+  parent_link="${namespace}/base_link">
+<!--   inertial_reference_frame="${inertial_reference_frame}"> -->
+  <origin xyz="0 0 0" rpy="0 ${0.5*pi} 0"/>
+</xacro:default_dvl_macro>
 
   <!-- Mount a camera -->
   <!-- <xacro:default_camera namespace="${namespace}" parent_link="${namespace}/base_link" suffix="front">
@@ -59,8 +83,7 @@
       </ray>
       <plugin filename="libgazebo_ros_range.so" name="gazebo_ros_range">
         <gaussianNoise>0.005</gaussianNoise>
-        <alwaysOn>1</alwaysOn>
-        <visualize>true</visualize> 
+        <alwaysOn>true</alwaysOn>
         <updateRate>10</updateRate>
         <topicName>sonar</topicName>
         <frameName>bluerov2/sonar_link</frameName>

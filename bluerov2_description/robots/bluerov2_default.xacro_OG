@@ -2,8 +2,6 @@
 <robot name="bluerov2" xmlns:xacro="http://www.ros.org/wiki/xacro" >
   <xacro:arg name="debug" default="0"/>
   <xacro:arg name="namespace" default="bluerov2"/>
-  <!-- add this into file -->
-  <!-- <xacro:arg name="inertial_reference_frame" default="world"/> -->
   <!-- Include the ROV macro file xacro:bluerov2_base -->
   <xacro:include filename="$(find bluerov2_description)/urdf/base.xacro"/>
   <!-- Hydrodynamic and hydrostatic parameters for the vehicle xacro:macro bluerov2_hydro_model -->
@@ -11,8 +9,6 @@
 
 <!-- Create the bluerov2 -->
   <xacro:bluerov2_base namespace="$(arg namespace)">
- <!--  inertial_reference_frame="$(arg inertial_reference_frame)" -->
-  
     <!-- The underwater object plugin is given as an input block parameter to
      allow the addition of external models of manipulator units -->
     <gazebo>
@@ -36,6 +32,4 @@
   <!-- Joint state publisher plugin -->
   <xacro:default_joint_state_publisher namespace="$(arg namespace)" update_rate="10"/>
 
-  <!-- Mount a Pose 3D sensor. -->
-  <xacro:default_pose_3d namespace="bluerov2" parent_link="bluerov2/base_link" />
 </robot>

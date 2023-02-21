@@ -13,9 +13,9 @@
     <arg name="joy_id" default="0"/>
 
     <!-- Initial position and heading of the vehicle (wrt Gazebo's inertial frame)  -->
-    <arg name="x" default="-5.4"/>
-    <arg name="y" default="5"/>
-    <arg name="z" default="-0.2"/>
+    <arg name="x" default="0"/>
+    <arg name="y" default="0"/>
+    <arg name="z" default="0"/>
     <arg name="yaw" default="0"/>
 
     <!-- Start the a underwater world simulation scenario -->
