@@ -1,6 +1,6 @@
 # BlueROV2 ROS Simulation
 
-Attention! It's in development
+This version is compatible with ROS Noetic + UUV Simulator from [here](https://github.com/mahyamkashani/uuv_simulator). 
 
 This repository contains the robot description and necessary launch files to
 simulate the BlueROV2 (unmanned underwater vehicle) on [Unmanned Underwater Vehicle Simulator (UUV Simulator)](https://github.com/uuvsimulator/uuv_simulator). Additional it's possible run BlueROV2 in SITL using [mavros](http://wiki.ros.org/mavros), joystick interaction and video streaming capture with opencv based on [bluerov_ros_playground](https://github.com/patrickelectric/bluerov_ros_playground) package from BlueRobotics.
@@ -17,14 +17,14 @@ This work is in development at [Ingeniarius, Lda.](http://ingeniarius.pt/) and [
 
 - git
 - [ros-\*-desktop-full](http://wiki.ros.org/ROS/Installation)
-  - kinetic or newer
+  - noetic
 - [mavros](http://wiki.ros.org/mavros)
 - python
   - opencv_python
   - numpy
   - [gi, gobject](https://wiki.ubuntu.com/Novacut/GStreamer1.0)
   - PyYAML
-- [UUV Simulator](https://uuvsimulator.github.io/)
+- [UUV Simulator](https://github.com/mahyamkashani/uuv_simulator)
 
 
 
